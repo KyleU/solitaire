@@ -1,0 +1,14 @@
+#!/bin/bash
+
+## Build a release-mode binary for macOS.
+
+set -e
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+project_dir=${dir}/..
+cd $project_dir
+
+cargo build --release
+
+mkdir -p build/macos
+cp target/release/solitaire build/macos/solitaire
+gzip -f build/macos/solitaire --keep

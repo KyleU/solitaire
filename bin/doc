@@ -1,0 +1,13 @@
+#!/bin/bash
+
+## Runs rustdoc for all projects, linking between projects and using custom logos and styling.
+
+set -e
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+project_dir=${dir}/..
+cd $project_dir
+
+cargo doc --no-deps --workspace
+
+cd crates/client
+cargo doc --no-deps

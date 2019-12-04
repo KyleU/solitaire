@@ -1,0 +1,33 @@
+{
+  "name": "solitaire-client",
+  "version": "0.1.0",
+  "description": "Client webpack app for solitaire",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solitaire/solitaire.git"
+  },
+  "keywords": [
+    "webassembly",
+    "wasm",
+    "rust",
+    "webpack"
+  ],
+  "author": "Kyle Unverferth <kyle@kyleu.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/solitaire/solitaire/issues"
+  },
+  "homepage": "https://solitaire",
+  "devDependencies": {
+    "solitaire_client": "../pkg",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
+    "copy-webpack-plugin": "^5.0.0"
+  }
+}

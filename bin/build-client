@@ -1,0 +1,40 @@
+#!/bin/bash
+
+## Runs `wasm-pack` for the client Rust code, and `npm install` to bundle it to JavaScript.
+## Requires wasm-pack
+
+set -e
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+project_dir=${dir}/..
+cd $project_dir
+
+cd crates/client
+echo "=== wasm-pack ==="
+wasm-pack build
+
+cd www
+echo "=== npm install ==="
+npm install
+rm -rf dist
+npm run build
+
+cd dist
+
+for file in *.wasm; do
+  echo "Current hashcode: ${file%.module.wasm}"
+  sed -i "" "s/${file%.module.wasm}/solitaire/g" bootstrap.js
+
+  mv "$file" "solitaire.module.wasm"
+done
+
+mkdir -p ../../../assets/embed/wasm/
+
+echo "=== wasm-opt ==="
+wasm-opt -O -o solitaire.module.wasm solitaire.module.wasm || echo " ::: Please install binaryen"
+
+echo "=== copying files ==="
+cp solitaire.module.wasm ../../../assets/embed/wasm/
+cat 0.bootstrap.js bootstrap.js > client.js
+cp client.js ../../../assets/embed
+
+echo "=== complete ==="

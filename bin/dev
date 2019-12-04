@@ -1,0 +1,12 @@
+#!/bin/bash
+
+## Watches the project directories, and runs the main application, restarting when changes are detected.
+## Requires cargo-watch
+
+set -e
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+project_dir=${dir}/..
+cd $project_dir
+
+# cargo clean -p solitaire
+RUST_BACKTRACE=1 cargo watch --ignore=bin --ignore=crates/client --ignore=crates/assets/embed --ignore=doc --ignore=log/solitaire.log --ignore=project --ignore=stylesheets -x 'run -- server'

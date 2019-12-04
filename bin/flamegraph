@@ -1,0 +1,16 @@
+#!/bin/bash
+
+## Uses `cargo-flamegraph` to produce an SVG flamegraph of the projects compilation.
+
+set -e
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+project_dir=${dir}/..
+cd $project_dir
+
+sudo cargo flamegraph --bin solitaire --output target/flamegraph.svg -- --help
+
+cargo build
+cargo clean -p solitaire
+sudo flamegraph -o target/flamegraph-build.svg "cargo build"
+
+sudo chown -R solitaire target

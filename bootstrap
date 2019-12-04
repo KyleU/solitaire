@@ -1,0 +1,24 @@
+#!/bin/bash
+set -e
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $dir
+
+echo "=== Cloning UIKit ==="
+cd crates/assets/stylesheets
+if [ -d "./uikit" ]; then
+  echo "UIKit directory exists"
+else
+  git submodule add --depth 1 -- https://github.com/uikit/uikit.git
+fi
+cd ../../..
+
+echo "=== Building CSS ==="
+bin/build-css
+echo "=== Building WASM Client ==="
+bin/build-client
+
+echo "=== Success! ==="
+cargo build
+
+echo "=== Running Your App! ==="
+cargo run -- server
