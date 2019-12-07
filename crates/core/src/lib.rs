@@ -26,6 +26,18 @@ pub const APPNAME: &str = "solitaire";
 /// Static information about the environent and build invocation
 pub mod build_info;
 
+pub mod card {
+  pub mod card;
+  pub mod color;
+  pub mod deck;
+  pub mod rank;
+  pub mod suit;
+}
+
+pub mod game {
+  pub mod moves;
+}
+
 pub mod messages {
   pub mod req;
   pub mod rsp;

@@ -1,6 +1,6 @@
 use solitaire_service::AppConfig;
 
-pub(crate) const DEFAULT_PORT: u16 = 5050;
+pub(crate) const DEFAULT_PORT: u16 = 4000;
 
 #[cfg(debug_assertions)]
 fn is_debug() -> bool {
