@@ -24,7 +24,7 @@ pub(crate) struct ServerSender {
   addr: Addr<ServerSocket>
 }
 
-impl solitaire_service::cache::SendCallback for ServerSender {
+impl solitaire_service::conn::SendCallback for ServerSender {
   fn send_message(&self, msg: ResponseMessage) {
     self.addr.do_send(SendResponseMessage { msg });
   }

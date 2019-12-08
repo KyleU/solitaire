@@ -17,8 +17,8 @@
 
 //! `solitaire-service` contains the primary logic for the application. It receives [RequestMessage](solitaire_core::RequestMessage)s and emits [ResponseMessage](solitaire_core::ResponseMessage)s
 
-pub mod cache;
 pub mod cfg;
+pub mod conn;
 pub mod ctx;
 pub mod files;
 pub mod handler;

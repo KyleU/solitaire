@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import com.solitaire.App;
 
 public class MainActivity extends Activity {
     static {
