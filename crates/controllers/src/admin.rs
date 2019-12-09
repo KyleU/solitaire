@@ -16,7 +16,12 @@ pub fn list(session: Session, cfg: Data<AppConfig>, req: HttpRequest) -> HttpRes
 /// Available at `/admin/conn`
 pub fn connections(session: Session, cfg: Data<AppConfig>, req: HttpRequest) -> HttpResponse {
   crate::act(&session, &cfg, req, |ctx, router| {
-    solitaire_templates::connections::connections(&ctx, router, ctx.app().connections().conn_list(), ctx.app().connections().channel_list())
+    solitaire_templates::connections::connections(
+      &ctx,
+      router,
+      ctx.app().connections().conn_list(),
+      ctx.app().connections().channel_list()
+    )
   })
 }
 

@@ -43,11 +43,17 @@ impl ConnectionCache {
   }
 
   pub fn channel_list(&self) -> Vec<(String, Vec<Uuid>)> {
-    let mut channels: Vec<(String, Vec<Uuid>)> = self.channels.read().unwrap().iter().map(|v| {
-      let mut ids: Vec<Uuid> = v.1.iter().copied().collect();
-      ids.sort();
-      (v.0.clone(), ids)
-    }).collect();
+    let mut channels: Vec<(String, Vec<Uuid>)> = self
+      .channels
+      .read()
+      .unwrap()
+      .iter()
+      .map(|v| {
+        let mut ids: Vec<Uuid> = v.1.iter().copied().collect();
+        ids.sort();
+        (v.0.clone(), ids)
+      })
+      .collect();
     channels.sort();
     channels
   }

@@ -29,12 +29,27 @@ impl RequestMessage {
 /// Game request message
 #[derive(Debug, Serialize, Deserialize)]
 pub enum GameRequestMessage {
-  MalformedRequest { reason: String, content: String },
+  MalformedRequest {
+    reason: String,
+    content: String
+  },
   RefreshGameState,
   GetPossibleMoves,
-  SelectCard { card: u32, pile: String, auto: bool },
-  SelectPile { pile: String, auto: bool },
-  MoveCards { cards: Vec<u32>, src: String, tgt: String, auto: bool },
+  SelectCard {
+    card: u32,
+    pile: String,
+    auto: bool
+  },
+  SelectPile {
+    pile: String,
+    auto: bool
+  },
+  MoveCards {
+    cards: Vec<u32>,
+    src: String,
+    tgt: String,
+    auto: bool
+  },
   Undo,
   Redo
 }

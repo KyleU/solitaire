@@ -1,4 +1,3 @@
-
 use serde::{Deserialize, Serialize};
 
 /// Simple Enum to represent card ranks
@@ -23,7 +22,21 @@ pub enum Rank {
 
 impl Rank {
   pub fn all() -> Vec<Rank> {
-    vec!(Rank::Two, Rank::Three, Rank::Four, Rank::Five, Rank::Six, Rank::Seven, Rank::Eight, Rank::Nine, Rank::Ten, Rank::Jack, Rank::Queen, Rank::King, Rank::Ace)
+    vec![
+      Rank::Two,
+      Rank::Three,
+      Rank::Four,
+      Rank::Five,
+      Rank::Six,
+      Rank::Seven,
+      Rank::Eight,
+      Rank::Nine,
+      Rank::Ten,
+      Rank::Jack,
+      Rank::Queen,
+      Rank::King,
+      Rank::Ace,
+    ]
   }
 
   pub fn to_char(&self) -> char {

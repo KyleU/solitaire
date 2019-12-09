@@ -19,10 +19,20 @@ pub enum Suit {
 
 impl Suit {
   pub fn standard() -> Vec<Suit> {
-    vec!(Suit::Hearts, Suit::Spades, Suit::Diamonds, Suit::Clubs)
+    vec![Suit::Hearts, Suit::Spades, Suit::Diamonds, Suit::Clubs]
   }
+
   pub fn all() -> Vec<Suit> {
-    vec!(Suit::Hearts, Suit::Spades, Suit::Diamonds, Suit::Clubs, Suit::Horseshoes, Suit::Stars, Suit::Tridents, Suit::Moons)
+    vec![
+      Suit::Hearts,
+      Suit::Spades,
+      Suit::Diamonds,
+      Suit::Clubs,
+      Suit::Horseshoes,
+      Suit::Stars,
+      Suit::Tridents,
+      Suit::Moons,
+    ]
   }
 
   pub fn to_char(&self) -> char {
@@ -54,5 +64,4 @@ impl Suit {
       Suit::Unknown => Color::UnknownColor
     }
   }
-
 }

@@ -17,7 +17,7 @@ impl PossibleMoveType {
       PossibleMoveType::MoveCards => 'm',
       PossibleMoveType::SelectCard => 'c',
       PossibleMoveType::SelectPile => 'p',
-      PossibleMoveType::Undo => 'u',
+      PossibleMoveType::Undo => 'u'
     }
   }
 }
@@ -49,7 +49,7 @@ impl PossibleMove {
         pile: self.source_pile.clone(),
         auto: true
       },
-      PossibleMoveType::Undo => GameRequestMessage::Undo,
+      PossibleMoveType::Undo => GameRequestMessage::Undo
     }
   }
 }

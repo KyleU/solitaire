@@ -14,6 +14,12 @@ pub struct Card {
 
 impl ToString for Card {
   fn to_string(&self) -> String {
-    format!("{}:{}{}{}", self.id, self.r.to_char(), self.s.to_char(), if self.u { "+" } else { "-" })
+    format!(
+      "{}:{}{}{}",
+      self.id,
+      self.r.to_char(),
+      self.s.to_char(),
+      if self.u { "+" } else { "-" }
+    )
   }
 }

@@ -1,6 +1,6 @@
-use crate::util::NotificationLevel;
 use crate::card::card::Card;
 use crate::game::moves::PossibleMove;
+use crate::util::NotificationLevel;
 
 use anyhow::{Context, Result};
 use serde::{Deserialize, Serialize};
@@ -50,10 +50,28 @@ impl ResponseMessage {
 /// Game response message
 #[derive(Debug, Serialize, Deserialize)]
 pub enum GameResponseMessage {
-  PossibleMoves { moves: Vec<PossibleMove>, undos_available: u16, redos_available: u16 },
-  CardRevealed { card: Card },
-  CardHidden { id: u32 },
-  CardMoveCancelled { cards: Vec<u32>, source: String },
-  CardsMoved { cards: Vec<u32>, source: String, target: String, turn: Option<bool> },
-  MessageSet { messages: Box<Vec<ResponseMessage>> }
+  PossibleMoves {
+    moves: Vec<PossibleMove>,
+    undos_available: u16,
+    redos_available: u16
+  },
+  CardRevealed {
+    card: Card
+  },
+  CardHidden {
+    id: u32
+  },
+  CardMoveCancelled {
+    cards: Vec<u32>,
+    source: String
+  },
+  CardsMoved {
+    cards: Vec<u32>,
+    source: String,
+    target: String,
+    turn: Option<bool>
+  },
+  MessageSet {
+    messages: Box<Vec<ResponseMessage>>
+  }
 }
