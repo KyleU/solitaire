@@ -6,7 +6,7 @@ edition = "2018"
 description = "Application logic used by the solitaire server"
 keywords = ["test", "noop", "pointless"]
 homepage = "https://estimate.poker"
-repository = "https://github.com/solitaire/solitaire"
+repository = "https://github.com/kyleu/solitaire"
 license = "MIT"
 
 [dependencies]

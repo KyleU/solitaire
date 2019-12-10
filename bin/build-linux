@@ -13,6 +13,6 @@ unset TARGET_CC
 mkdir -p build/linux
 cp target/x86_64-unknown-linux-musl/release/solitaire build/linux/solitaire
 
-cp target/x86_64-unknown-linux-musl/release/solitaire ../solitaire.com/bin/apps/solitaire/solitaire
+cp target/x86_64-unknown-linux-musl/release/solitaire ../solitaire.com/bin/apps/kyleu/solitaire
 
 gzip -f build/linux/solitaire --keep

@@ -11,9 +11,9 @@
 #![warn(unused_qualifications)]
 #![warn(unused_results)]
 #![warn(variant_size_differences)]
-#![doc(html_favicon_url = "https://raw.githubusercontent.com/solitaire/solitaire/master/crates/assets/embed/favicon.ico")]
-#![doc(html_logo_url = "https://raw.githubusercontent.com/solitaire/solitaire/master/crates/assets/embed/favicon.png")]
-#![doc(issue_tracker_base_url = "https://github.com/solitaire/solitaire/issues/")]
+#![doc(html_favicon_url = "https://raw.githubusercontent.com/kyleu/solitaire/master/crates/assets/embed/favicon.ico")]
+#![doc(html_logo_url = "https://raw.githubusercontent.com/kyleu/solitaire/master/crates/assets/embed/favicon.png")]
+#![doc(issue_tracker_base_url = "https://github.com/kyleu/solitaire/issues/")]
 
 //! `solitaire-service` contains the primary logic for the application. It receives [RequestMessage](solitaire_core::RequestMessage)s and emits [ResponseMessage](solitaire_core::ResponseMessage)s
 

@@ -8,7 +8,7 @@ readme = "README.md"
 categories = ["development-tools", "web-programming", "web-programming::http-server"]
 keywords = ["solitaire"]
 homepage = "https://estimate.poker"
-repository = "https://github.com/solitaire/solitaire"
+repository = "https://github.com/kyleu/solitaire"
 license = "MIT"
 exclude = [".gitignore", ".travis.yml", "appveyor.yml"]
 build = "build.rs"
@@ -79,11 +79,11 @@ winres = "0.1"
 lto = true
 
 [badges]
-appveyor = { repository = "solitaire/solitaire" }
-is-it-maintained-issue-resolution = { repository = "solitaire/solitaire" }
-is-it-maintained-open-issues = { repository = "solitaire/solitaire" }
+appveyor = { repository = "kyleu/solitaire" }
+is-it-maintained-issue-resolution = { repository = "kyleu/solitaire" }
+is-it-maintained-open-issues = { repository = "kyleu/solitaire" }
 maintenance = { status = "actively-developed" }
-travis-ci = { repository = "solitaire/solitaire" }
+travis-ci = { repository = "kyleu/solitaire" }
 
 [package.metadata.rpm]
 buildflags = ["--release"]

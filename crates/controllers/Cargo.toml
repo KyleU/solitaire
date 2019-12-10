@@ -5,7 +5,7 @@ authors = ["Kyle Unverferth <kyle@kyleu.com>"]
 edition = "2018"
 description = "HTTP controllers for the solitaire server"
 homepage = "https://estimate.poker"
-repository = "https://github.com/solitaire/solitaire"
+repository = "https://github.com/kyleu/solitaire"
 license = "MIT"
 
 [dependencies]

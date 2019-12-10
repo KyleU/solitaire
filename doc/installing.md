@@ -2,11 +2,11 @@
 
 ## Github Releases
 
-Compiled binaries are available at [Github Releases](https://github.com/solitaire/solitaire/releases). Simply download and extract your platform's distribution, unzip, and place on your path.
+Compiled binaries are available at [Github Releases](https://github.com/kyleu/solitaire/releases). Simply download and extract your platform's distribution, unzip, and place on your path.
 
 ## Homebrew
 
-`brew install solitaire/solitaire/solitaire`
+`brew install kyleu/kyleu/solitaire`
 
 ## App Stores
 

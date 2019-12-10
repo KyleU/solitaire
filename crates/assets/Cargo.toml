@@ -5,7 +5,7 @@ authors = ["Kyle Unverferth <kyle@kyleu.com>"]
 edition = "2018"
 description = "Embedded web assets for solitaire"
 homepage = "https://estimate.poker"
-repository = "https://github.com/solitaire/solitaire"
+repository = "https://github.com/kyleu/solitaire"
 license = "MIT"
 
 [dependencies]

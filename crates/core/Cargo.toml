@@ -6,7 +6,7 @@ edition = "2018"
 description = "Core classes used by solitaire in the app and WASM"
 keywords = ["test", "noop", "pointless"]
 homepage = "https://estimate.poker"
-repository = "https://github.com/solitaire/solitaire"
+repository = "https://github.com/kyleu/solitaire"
 license = "MIT"
 build = "build.rs"
 

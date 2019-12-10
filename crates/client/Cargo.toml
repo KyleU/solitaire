@@ -7,7 +7,7 @@ description = "WASM web client sources for solitaire"
 readme = "README.md"
 categories = ["wasm", "web-programming", "web-programming::websocket"]
 homepage = "https://estimate.poker"
-repository = "https://github.com/solitaire/solitaire"
+repository = "https://github.com/kyleu/solitaire"
 license = "MIT"
 exclude = [".gitignore", ".travis.yml", "appveyor.yml"]
 

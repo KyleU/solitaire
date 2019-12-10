@@ -1,7 +1,7 @@
 #![forbid(unsafe_code)]
-#![doc(html_favicon_url = "https://raw.githubusercontent.com/solitaire/solitaire/master/crates/assets/embed/favicon.ico")]
-#![doc(html_logo_url = "https://raw.githubusercontent.com/solitaire/solitaire/master/crates/assets/embed/favicon.png")]
-#![doc(issue_tracker_base_url = "https://github.com/solitaire/solitaire/issues/")]
+#![doc(html_favicon_url = "https://raw.githubusercontent.com/kyleu/solitaire/master/crates/assets/embed/favicon.ico")]
+#![doc(html_logo_url = "https://raw.githubusercontent.com/kyleu/solitaire/master/crates/assets/embed/favicon.png")]
+#![doc(issue_tracker_base_url = "https://github.com/kyleu/solitaire/issues/")]
 
 //! `solitaire-assets` contains embedded static files intended to be served from the web application.
 

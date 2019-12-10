@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/solitaire/solitaire.git"
+    "url": "git+https://github.com/kyleu/solitaire.git"
   },
   "keywords": [
     "webassembly",
@@ -20,9 +20,9 @@
   "author": "Kyle Unverferth <kyle@kyleu.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/solitaire/solitaire/issues"
+    "url": "https://github.com/kyleu/solitaire/issues"
   },
-  "homepage": "https://solitaire",
+  "homepage": "https://kyleu.com/solitaire",
   "devDependencies": {
     "solitaire_client": "../pkg",
     "webpack": "^4.29.3",

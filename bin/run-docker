@@ -8,4 +8,4 @@ dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 project_dir=${dir}/..
 cd $project_dir
 
-docker run -m 4g -P solitaire/solitaire
+docker run -m 4g -P kyleu/solitaire

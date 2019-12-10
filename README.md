@@ -1,9 +1,9 @@
 # solitaire
 
-[![Build Status](https://travis-ci.org/solitaire/solitaire.svg?branch=master)](https://travis-ci.org/solitaire/solitaire)
+[![Build Status](https://travis-ci.org/kyleu/solitaire.svg?branch=master)](https://travis-ci.org/kyleu/solitaire)
 [![Crate](https://meritbadge.herokuapp.com/solitaire)](https://crates.io/crates/solitaire)
 [![Docs](https://docs.rs/solitaire/badge.svg)](https://docs.rs/solitaire)
-[![Dependencies](https://deps.rs/repo/github/solitaire/solitaire/status.svg)](https://deps.rs/repo/github/solitaire/solitaire)
+[![Dependencies](https://deps.rs/repo/github/kyleu/solitaire/status.svg)](https://deps.rs/repo/github/kyleu/solitaire)
 
 solitaire is a work in progress...
 
@@ -35,7 +35,7 @@ By default, solitaire stores config files in your system's user configuration di
 
 - macOS: ~/Library/Application Support/solitaire
 - Linux: ~/.config/solitaire
-- Windows: %APPDATA%/solitaire/solitaire
+- Windows: %APPDATA%/kyleu/solitaire
 
 ### Files
 
