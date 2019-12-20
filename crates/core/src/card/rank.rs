@@ -21,61 +21,60 @@ pub enum Rank {
 }
 
 impl Rank {
-  pub fn all() -> Vec<Rank> {
+  pub fn all() -> Vec<Self> {
     vec![
-      Rank::Two,
-      Rank::Three,
-      Rank::Four,
-      Rank::Five,
-      Rank::Six,
-      Rank::Seven,
-      Rank::Eight,
-      Rank::Nine,
-      Rank::Ten,
-      Rank::Jack,
-      Rank::Queen,
-      Rank::King,
-      Rank::Ace,
+      Self::Two,
+      Self::Three,
+      Self::Four,
+      Self::Five,
+      Self::Six,
+      Self::Seven,
+      Self::Eight,
+      Self::Nine,
+      Self::Ten,
+      Self::Jack,
+      Self::Queen,
+      Self::King,
+      Self::Ace,
     ]
   }
 
   pub fn to_char(&self) -> char {
     match self {
-      Rank::Two => '2',
-      Rank::Three => '3',
-      Rank::Four => '4',
-      Rank::Five => '5',
-      Rank::Six => '6',
-      Rank::Seven => '7',
-      Rank::Eight => '8',
-      Rank::Nine => '9',
-      Rank::Ten => 'X',
-      Rank::Jack => 'J',
-      Rank::Queen => 'Q',
-      Rank::King => 'K',
-      Rank::Ace => 'A',
-      Rank::Joker => '!',
-      Rank::Unknown => '?'
+      Self::Two => '2',
+      Self::Three => '3',
+      Self::Four => '4',
+      Self::Five => '5',
+      Self::Six => '6',
+      Self::Seven => '7',
+      Self::Eight => '8',
+      Self::Nine => '9',
+      Self::Ten => 'X',
+      Self::Jack => 'J',
+      Self::Queen => 'Q',
+      Self::King => 'K',
+      Self::Ace => 'A',
+      Self::Joker => '!',
+      Self::Unknown => '?'
     }
   }
 
   pub fn to_index(&self) -> u8 {
     match self {
-      Rank::Two => 2,
-      Rank::Three => 3,
-      Rank::Four => 4,
-      Rank::Five => 5,
-      Rank::Six => 6,
-      Rank::Seven => 7,
-      Rank::Eight => 8,
-      Rank::Nine => 9,
-      Rank::Ten => 10,
-      Rank::Jack => 11,
-      Rank::Queen => 12,
-      Rank::King => 13,
-      Rank::Ace => 14,
-      Rank::Joker => 0,
-      Rank::Unknown => 0
+      Self::Two => 2,
+      Self::Three => 3,
+      Self::Four => 4,
+      Self::Five => 5,
+      Self::Six => 6,
+      Self::Seven => 7,
+      Self::Eight => 8,
+      Self::Nine => 9,
+      Self::Ten => 10,
+      Self::Jack => 11,
+      Self::Queen => 12,
+      Self::King => 13,
+      Self::Ace => 14,
+      Self::Joker | Self::Unknown => 0
     }
   }
 }

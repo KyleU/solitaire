@@ -1,3 +1,3 @@
 # solitaire-client
 
-wasm client for solitaire
+WASM web client sources for solitaire

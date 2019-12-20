@@ -14,10 +14,10 @@ pub struct MessageHandler {
 }
 
 impl MessageHandler {
-  pub fn new(connection_id: Uuid, channel_id: String, ctx: RequestContext) -> MessageHandler {
+  pub fn new(connection_id: Uuid, channel_id: String, ctx: RequestContext) -> Self {
     let o = slog::o!("connection" => format!("{}", connection_id), "service" => "message_handler", "channel" => channel_id.clone());
     let log = ctx.log().new(o);
-    MessageHandler {
+    Self {
       connection_id,
       channel_id,
       ctx,
@@ -25,29 +25,34 @@ impl MessageHandler {
     }
   }
 
-  pub fn connection_id(&self) -> &Uuid {
+  pub const fn connection_id(&self) -> &Uuid {
     &self.connection_id
   }
 
-  pub fn channel_id(&self) -> &String {
+  pub const fn channel_id(&self) -> &String {
     &self.channel_id
   }
 
-  pub fn ctx(&self) -> &RequestContext {
+  pub const fn ctx(&self) -> &RequestContext {
     &self.ctx
   }
 
-  pub fn on_open(&self) -> Result<Vec<ResponseMessage>> {
-    Ok(vec![ResponseMessage::Connected {
+  pub fn log(&self) -> &slog::Logger {
+    &self.log
+  }
+
+  pub fn on_open(&self) -> Result<()> {
+    self.send_to_self(ResponseMessage::Connected {
       connection_id: *self.connection_id(),
       user_id: *self.ctx().user_id(),
       u: Box::new((*self.ctx.user_profile()).clone()),
       b: !self.ctx.app().verbose()
-    }])
+    })
   }
 
-  pub fn on_closed(&self) -> Vec<ResponseMessage> {
-    Vec::new()
+  pub fn on_closed(&self) -> Result<()> {
+    slog::debug!(self.log, "Closing connection for [{}:{}]", self.connection_id, self.channel_id);
+    Ok(())
   }
 
   pub fn on_message(&self, msg: RequestMessage) -> Result<()> {
@@ -60,26 +65,22 @@ impl MessageHandler {
     }
   }
 
-  pub fn log(&self) -> &slog::Logger {
-    &self.log
-  }
-
   fn send_to_self(&self, msg: ResponseMessage) -> Result<()> {
     self.ctx().app().connections().send_connection(self.connection_id(), msg);
     Ok(())
   }
 
-  fn _send_to_channel(&self, msg: ResponseMessage) -> Result<()> {
+  fn _send_to_channel(&self, msg: &ResponseMessage) -> Result<()> {
     self.ctx().app().connections().send_channel(self.channel_id(), msg);
     Ok(())
   }
 
-  fn _send_to_channel_except_self(&self, msg: ResponseMessage) -> Result<()> {
+  fn _send_to_channel_except_self(&self, msg: &ResponseMessage) -> Result<()> {
     self
       .ctx()
       .app()
       .connections()
-      .send_channel_except(self.channel_id(), vec![self.connection_id()], msg);
+      .send_channel_except(self.channel_id(), &[self.connection_id()], msg);
     Ok(())
   }
 }

@@ -14,10 +14,10 @@ pub enum PossibleMoveType {
 impl PossibleMoveType {
   pub fn to_char(&self) -> char {
     match self {
-      PossibleMoveType::MoveCards => 'm',
-      PossibleMoveType::SelectCard => 'c',
-      PossibleMoveType::SelectPile => 'p',
-      PossibleMoveType::Undo => 'u'
+      Self::MoveCards => 'm',
+      Self::SelectCard => 'c',
+      Self::SelectPile => 'p',
+      Self::Undo => 'u'
     }
   }
 }

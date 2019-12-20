@@ -18,50 +18,46 @@ pub enum Suit {
 }
 
 impl Suit {
-  pub fn standard() -> Vec<Suit> {
-    vec![Suit::Hearts, Suit::Spades, Suit::Diamonds, Suit::Clubs]
+  pub fn standard() -> Vec<Self> {
+    vec![Self::Hearts, Self::Spades, Self::Diamonds, Self::Clubs]
   }
 
-  pub fn all() -> Vec<Suit> {
+  pub fn all() -> Vec<Self> {
     vec![
-      Suit::Hearts,
-      Suit::Spades,
-      Suit::Diamonds,
-      Suit::Clubs,
-      Suit::Horseshoes,
-      Suit::Stars,
-      Suit::Tridents,
-      Suit::Moons,
+      Self::Hearts,
+      Self::Spades,
+      Self::Diamonds,
+      Self::Clubs,
+      Self::Horseshoes,
+      Self::Stars,
+      Self::Tridents,
+      Self::Moons,
     ]
   }
 
   pub fn to_char(&self) -> char {
     match self {
-      Suit::Hearts => 'H',
-      Suit::Spades => 'S',
-      Suit::Diamonds => 'D',
-      Suit::Clubs => 'C',
-      Suit::Horseshoes => 'O',
-      Suit::Stars => 'R',
-      Suit::Tridents => 'T',
-      Suit::Moons => 'M',
-      Suit::Suitless => 'X',
-      Suit::Unknown => '?'
+      Self::Hearts => 'H',
+      Self::Spades => 'S',
+      Self::Diamonds => 'D',
+      Self::Clubs => 'C',
+      Self::Horseshoes => 'O',
+      Self::Stars => 'R',
+      Self::Tridents => 'T',
+      Self::Moons => 'M',
+      Self::Suitless => 'X',
+      Self::Unknown => '?'
     }
   }
 
   pub fn color(&self) -> Color {
     match self {
-      Suit::Hearts => Color::Red,
-      Suit::Spades => Color::Black,
-      Suit::Diamonds => Color::Red,
-      Suit::Clubs => Color::Black,
-      Suit::Horseshoes => Color::Black,
-      Suit::Stars => Color::Red,
-      Suit::Tridents => Color::Green,
-      Suit::Moons => Color::Blue,
-      Suit::Suitless => Color::Colorless,
-      Suit::Unknown => Color::UnknownColor
+      Self::Hearts | Self::Diamonds | Self::Stars => Color::Red,
+      Self::Spades | Self::Clubs | Self::Horseshoes => Color::Black,
+      Self::Tridents => Color::Green,
+      Self::Moons => Color::Blue,
+      Self::Suitless => Color::Colorless,
+      Self::Unknown => Color::Unknown
     }
   }
 }

@@ -4,7 +4,10 @@ version = "0.0.1"
 authors = ["Kyle Unverferth <kyle@kyleu.com>"]
 edition = "2018"
 description = "Embedded web assets for solitaire"
-homepage = "https://estimate.poker"
+readme = "README.md"
+categories = ["wasm", "web-programming", "web-programming::websocket"]
+keywords = ["static", "assets"]
+homepage = "https://solitaire.gg"
 repository = "https://github.com/kyleu/solitaire"
 license = "MIT"
 

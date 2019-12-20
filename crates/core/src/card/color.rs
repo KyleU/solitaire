@@ -8,18 +8,18 @@ pub enum Color {
   Green,
   Blue,
   Colorless,
-  UnknownColor
+  Unknown
 }
 
 impl Color {
   pub fn to_char(&self) -> char {
     match self {
-      Color::Red => 'R',
-      Color::Black => 'B',
-      Color::Green => 'G',
-      Color::Blue => 'U',
-      Color::Colorless => 'X',
-      Color::UnknownColor => '?'
+      Self::Red => 'R',
+      Self::Black => 'B',
+      Self::Green => 'G',
+      Self::Blue => 'U',
+      Self::Colorless => 'X',
+      Self::Unknown => '?'
     }
   }
 }

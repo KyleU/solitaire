@@ -8,7 +8,7 @@ use solitaire_service::AppConfig;
 
 /// Available at `/`
 pub fn index(session: Session, cfg: web::Data<AppConfig>, req: HttpRequest) -> HttpResponse {
-  crate::act(&session, &cfg, req, |ctx, router| solitaire_templates::home::index(&ctx, router))
+  crate::act(&session, &cfg, req, |ctx, router| solitaire_templates::home::index(ctx, router))
 }
 
 /// Available at `/health`
@@ -19,7 +19,7 @@ pub fn health() -> HttpResponse {
 /// Available at `/profile`
 pub fn profile(session: Session, cfg: web::Data<AppConfig>, req: HttpRequest) -> HttpResponse {
   crate::act(&session, &cfg, req, |ctx, router| {
-    solitaire_templates::profile::profile(&ctx, router)
+    solitaire_templates::profile::profile(ctx, router)
   })
 }
 
@@ -33,7 +33,7 @@ pub fn profile_post(session: Session, cfg: web::Data<AppConfig>, req: HttpReques
         f.navbar_color().into(),
         f.link_color().into()
       );
-      solitaire_service::profile::save(&cfg.files(), &ctx.user_id(), &profile)?;
+      solitaire_service::profile::save(cfg.files(), ctx.user_id(), &profile)?;
       router.route_simple("profile")
     }),
     None => crate::redir(&session, &cfg, req, |_ctx, router| router.route_simple("profile"))

@@ -1,4 +1,5 @@
 use serde::Deserialize;
+use solitaire_core::profile::Theme;
 
 /// Transport class for editing your profile
 #[derive(Debug, Deserialize)]
@@ -10,22 +11,22 @@ pub struct ProfileForm {
 }
 
 impl ProfileForm {
-  pub fn username(&self) -> &String {
+  pub const fn username(&self) -> &String {
     &self.username
   }
 
-  pub fn theme(&self) -> solitaire_core::profile::Theme {
-    match self.theme.parse::<solitaire_core::profile::Theme>() {
+  pub fn theme(&self) -> Theme {
+    match self.theme.parse::<Theme>() {
       Ok(t) => t,
-      Err(_) => solitaire_core::profile::Theme::Light
+      Err(_) => Theme::Light
     }
   }
 
-  pub fn navbar_color(&self) -> &String {
+  pub const fn navbar_color(&self) -> &String {
     &self.navbar_color
   }
 
-  pub fn link_color(&self) -> &String {
+  pub const fn link_color(&self) -> &String {
     &self.link_color
   }
 }
